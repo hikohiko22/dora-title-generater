@@ -6,7 +6,7 @@ var Canvas = require('canvas');
 //var canvas = new Canvas(200,200);
 //var ctx = canvas.getContext('2d');
 
-fs.readFile(__dirname + '/pronama.png', function(err, data){
+fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
     if (err) throw err;
 
     // データをcanvasのcontextに設定
