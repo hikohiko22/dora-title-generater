@@ -4,8 +4,6 @@ var app = express();
 
 var Canvas = require('canvas');
 var Image = Canvas.Image;
-//var canvas = new Canvas(200,200);
-//var ctx = canvas.getContext('2d');
 
 fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
     if (err) throw err;
@@ -16,6 +14,10 @@ fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
     var canvas = new Canvas(img.width, img.height);
     var ctx = canvas.getContext('2d');
     ctx.drawImage(img, 0, 0, img.width, img.height);
+
+    //ctx.font = '30px Impact';
+	//ctx.rotate(.1);
+	//ctx.fillText("Hello World!", 50, 100);
 
     app.set('port', (process.env.PORT || 5000));
 	app.use(express.static(__dirname + '/public'));
@@ -28,7 +30,3 @@ fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
 	  console.log("Node app is running at localhost:" + app.get('port'));
 	});
 });
-
-//ctx.font = '30px Impact';
-//ctx.rotate(.1);
-//ctx.fillText("Hello World!", 50, 100);
