@@ -3,6 +3,7 @@ var express = require('express');
 var app = express();
 
 var Canvas = require('canvas');
+var Image = Canvas.Image;
 //var canvas = new Canvas(200,200);
 //var ctx = canvas.getContext('2d');
 
