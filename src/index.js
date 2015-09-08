@@ -16,19 +16,19 @@ fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
     var canvas = new Canvas(img.width, img.height);
     var ctx = canvas.getContext('2d');
     ctx.drawImage(img, 0, 0, img.width, img.height);
+
+    app.set('port', (process.env.PORT || 5000));
+	app.use(express.static(__dirname + '/public'));
+
+	app.get('/', function(request, response) {
+	    response.send('<img src="' + canvas.toDataURL() + '" />');
+	});
+
+	app.listen(app.get('port'), function() {
+	  console.log("Node app is running at localhost:" + app.get('port'));
+	});
 });
 
 //ctx.font = '30px Impact';
 //ctx.rotate(.1);
 //ctx.fillText("Hello World!", 50, 100);
-
-app.set('port', (process.env.PORT || 5000));
-app.use(express.static(__dirname + '/public'));
-
-app.get('/', function(request, response) {
-    response.send('<img src="' + canvas.toDataURL() + '" />');
-});
-
-app.listen(app.get('port'), function() {
-  console.log("Node app is running at localhost:" + app.get('port'));
-});
