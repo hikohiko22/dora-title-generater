@@ -19,9 +19,10 @@ fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
     var textMeasure = ctx.measureText(text);
 
     ctx.font = '30px Impact';
+    ctx.textAlign = 'center';
 
 	ctx.fillStyle = 'rgba(255, 255, 255, 1.0)';
-	ctx.fillText(text, canvas.width / 2 - textMeasure.width / 2, 100);
+	ctx.fillText(text, canvas.width / 2 - textMeasure.width, 100);
 
     app.set('port', (process.env.PORT || 5000));
 	app.use(express.static(__dirname + '/public'));
