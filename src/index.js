@@ -19,7 +19,7 @@ fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
     var text = 'どこでもドア岩本';
     var textMeasure = ctx.measureText(text);
 
-    var myFont = new Font('MyFont', '.fonts/rounded-mgenplus-1c-heavy.ttf');
+    var myFont = new Font('MyFont', '../.fonts/rounded-mgenplus-1c-heavy.ttf');
 
     ctx.font = '30px myFont';
     ctx.textAlign = 'center';
