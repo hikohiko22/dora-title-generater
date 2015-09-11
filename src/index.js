@@ -15,7 +15,7 @@ fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
     var ctx = canvas.getContext('2d');
     ctx.drawImage(img, 0, 0, img.width, img.height);
 
-    var text = 'Hello/nWorld!!';
+    var text = 'Hello\nWorld!!';
     var textMeasure = ctx.measureText(text);
 
     ctx.font = '30px Impact';
