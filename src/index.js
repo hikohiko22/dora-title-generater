@@ -15,9 +15,8 @@ fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
     var ctx = canvas.getContext('2d');
     ctx.drawImage(img, 0, 0, img.width, img.height);
 
-    //ctx.font = '30px Impact';
-	//ctx.rotate(.1);
-	//ctx.fillText("Hello World!", 50, 100);
+    ctx.font = '30px Impact';
+	ctx.fillText("Hello World!", 50, 100);
 
     app.set('port', (process.env.PORT || 5000));
 	app.use(express.static(__dirname + '/public'));
