@@ -18,7 +18,7 @@ fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
     var text = 'どこでもドア';
     var textMeasure = ctx.measureText(text);
 
-    ctx.font = "30px 'ＭＳ ゴシック'";
+    ctx.font = 'bold 30px Century Gothic,"Hiragino Kaku Gothic ProN"';
     ctx.textAlign = 'center';
 
 	ctx.fillStyle = 'rgba(255, 255, 255, 1.0)';
