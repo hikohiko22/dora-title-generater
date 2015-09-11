@@ -21,7 +21,7 @@ fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
 
     //var myFont = new Font('MyFont', 'rounded-mgenplus-1c-heavy.ttf');
 
-    ctx.font = '60px "Rounded Mgen+ 1c"';
+    ctx.font = '45px "Rounded Mgen+ 1c"';
     ctx.textAlign = 'center';
 
 	ctx.fillStyle = 'rgba(255, 255, 255, 1.0)';
