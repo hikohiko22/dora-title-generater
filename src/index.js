@@ -18,7 +18,7 @@ fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
     var text = 'どこでもドア';
     var textMeasure = ctx.measureText(text);
 
-    ctx.font = '30px Impact';
+    ctx.font = '30px ＭＳ Ｐゴシック';
     ctx.textAlign = 'center';
 
 	ctx.fillStyle = 'rgba(255, 255, 255, 1.0)';
