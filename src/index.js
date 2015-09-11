@@ -15,7 +15,7 @@ fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
     var ctx = canvas.getContext('2d');
     ctx.drawImage(img, 0, 0, img.width, img.height);
 
-    var text = 'どこでもドア';
+    var text = 'どこでもドア岩本';
     var textMeasure = ctx.measureText(text);
 
     ctx.font = 'bold 30px Century Gothic,"Hiragino Kaku Gothic ProN"';
