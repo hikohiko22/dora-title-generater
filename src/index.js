@@ -4,6 +4,7 @@ var app = express();
 
 var Canvas = require('canvas');
 var Image = Canvas.Image;
+var Font = Canvas.Font;
 
 fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
     if (err) throw err;
@@ -18,7 +19,9 @@ fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
     var text = 'どこでもドア岩本';
     var textMeasure = ctx.measureText(text);
 
-    ctx.font = 'bold 30px Century Gothic,"Hiragino Kaku Gothic ProN"';
+    var myFont = new Font('MyFont', 'rounded-mgenplus-1c-heavy.ttf');
+
+    ctx.font = '30px myFont';
     ctx.textAlign = 'center';
 
 	ctx.fillStyle = 'rgba(255, 255, 255, 1.0)';
