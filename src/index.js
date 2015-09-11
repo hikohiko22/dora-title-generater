@@ -25,7 +25,7 @@ fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
     ctx.textAlign = 'center';
 
 	ctx.fillStyle = 'rgba(255, 255, 255, 1.0)';
-	ctx.fillText(text, canvas.width / 2, 100);
+	ctx.fillText(text, canvas.width / 2, 150);
 
 	console.log(canvas.width, textMeasure.width);
 
