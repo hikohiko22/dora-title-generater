@@ -16,10 +16,8 @@ fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
     var ctx = canvas.getContext('2d');
     ctx.drawImage(img, 0, 0, img.width, img.height);
 
-    var text = 'どこでもドア岩本';
+    var text = 'どこでもドア岩本hogehogheohgoehgheghoehgoeh/nhogehoge';
     var textMeasure = ctx.measureText(text);
-
-    //var myFont = new Font('MyFont', 'rounded-mgenplus-1c-heavy.ttf');
 
     ctx.font = '45px "Rounded Mgen+ 1c"';
     ctx.textAlign = 'center';
