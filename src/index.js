@@ -16,7 +16,8 @@ fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
     ctx.drawImage(img, 0, 0, img.width, img.height);
 
     ctx.font = '30px Impact';
-	ctx.fillText("Hello World!", 50, 100);
+	ctx.fillText("Hello World!", img.width / 2, img.height / 2);
+	ctx.textAlign = 'center';
 
     app.set('port', (process.env.PORT || 5000));
 	app.use(express.static(__dirname + '/public'));
