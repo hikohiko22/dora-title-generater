@@ -19,6 +19,8 @@ fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
     var text = 'どこでもドア岩本';
     var textMeasure = ctx.measureText(text);
 
+    console.log(textMeasure.width, textMeasure.height);
+
     ctx.font = '45px "Rounded Mgen+ 1c"';
     ctx.textAlign = 'center';
 
@@ -29,7 +31,7 @@ fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
 
 	ctx.fillText(text, canvas.width / 2, 110);
 
-	console.log(canvas.width, textMeasure.width, textMeasure.height);
+	console.log(textMeasure.width, textMeasure.height);
 
     app.set('port', (process.env.PORT || 5000));
 	app.use(express.static(__dirname + '/public'));
