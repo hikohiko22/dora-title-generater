@@ -25,11 +25,11 @@ fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
     ctx.textAlign = 'center';
 
 	ctx.fillStyle = 'rgba(255, 255, 255, 1.0)';
-	ctx.fillText(text, canvas.width / 2, 110);
+	ctx.fillText(text, canvas.width / 2, 100);
 
 	text = 'hogehohgoe';
 
-	ctx.fillText(text, canvas.width / 2, 110 + 45);
+	ctx.fillText(text, canvas.width / 2, 100 + 50);
 
 	console.log(textMeasure.width, textMeasure.height);
 
