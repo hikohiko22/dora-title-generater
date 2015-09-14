@@ -29,7 +29,7 @@ fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
 
 	text = 'hogehohgoe';
 
-	ctx.fillText(text, canvas.width / 2, 110);
+	ctx.fillText(text, canvas.width / 2, 110 + 45);
 
 	console.log(textMeasure.width, textMeasure.height);
 
