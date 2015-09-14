@@ -16,7 +16,7 @@ fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
     var ctx = canvas.getContext('2d');
     ctx.drawImage(img, 0, 0, img.width, img.height);
 
-    var text = 'どこでもドア岩本hogehogheohgoehgheghoehgoeh/nhogehoge';
+    var text = 'どこでもドア岩本';
     var textMeasure = ctx.measureText(text);
 
     ctx.font = '45px "Rounded Mgen+ 1c"';
@@ -25,7 +25,11 @@ fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
 	ctx.fillStyle = 'rgba(255, 255, 255, 1.0)';
 	ctx.fillText(text, canvas.width / 2, 110);
 
-	console.log(canvas.width, textMeasure.width);
+	text = 'hogehohgoe';
+
+	ctx.fillText(text, canvas.width / 2, 110);
+
+	console.log(canvas.width, textMeasure.width, textMeasure.height);
 
     app.set('port', (process.env.PORT || 5000));
 	app.use(express.static(__dirname + '/public'));
