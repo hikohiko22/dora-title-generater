@@ -21,7 +21,7 @@ app.get('/:txt', function(request, response) {
 	    var ctx = canvas.getContext('2d');
 	    ctx.drawImage(img, 0, 0, img.width, img.height);
 
-		var text = request.params.txt;
+	    var text = request.params.txt;
 	    var textMeasure;
 
 	    ctx.font = '45px "Rounded Mgen+ 1c"';
@@ -47,10 +47,11 @@ app.get('/:txt', function(request, response) {
 	    	ctx.fillText(tmpText, canvas.width / 2, textPosY);
 	    	tmpText = '';
 	    }
-	    response.send('<img src="' + canvas.toDataURL() + '" />');
 	});
 
-	app.listen(app.get('port'), function() {
-	  console.log("Node app is running at localhost:" + app.get('port'));
-	});
+    response.send('<img src="' + canvas.toDataURL() + '" />');
+});
+
+app.listen(app.get('port'), function() {
+  console.log("Node app is running at localhost:" + app.get('port'));
 });
