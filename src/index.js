@@ -1,10 +1,12 @@
-var fs = require('fs');
-var express = require('express');
-var app = express();
-
 var Canvas = require('canvas');
-var Image = Canvas.Image;
+var express = require('express');
+var fs = require('fs');
+var req = require('request');
+
 var Font = Canvas.Font;
+var Image = Canvas.Image;
+
+var app = express();
 
 fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
     if (err) throw err;
@@ -17,7 +19,7 @@ fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
     ctx.drawImage(img, 0, 0, img.width, img.height);
 
     var text = 'どこでもドア岩本はすごくたのしいんだ。すごいよ＝＝＝＝＝＝えへへへっへへｈ従来の方式では、全ての';
-    var textMeasure = ctx.measureText(text);
+    var textMeasure;
 
     ctx.font = '45px "Rounded Mgen+ 1c"';
     ctx.textAlign = 'center';
@@ -47,7 +49,13 @@ fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
 	app.use(express.static(__dirname + '/public'));
 
 	app.get('/', function(request, response) {
-	    response.send('<img src="' + canvas.toDataURL() + '" />');
+	    req.get(url, function(error, response, body){
+        if (!error && response.statusCode == 200) {
+        	console.log('body');
+            console.log(body);
+        } else {
+            console.log('error: '+ response.statusCode);
+        }
 	});
 
 	app.listen(app.get('port'), function() {
