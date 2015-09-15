@@ -16,7 +16,7 @@ fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
     var ctx = canvas.getContext('2d');
     ctx.drawImage(img, 0, 0, img.width, img.height);
 
-    var text = 'どこでもドア岩本はすごくたのしいんだ。すごいよ＝＝＝＝＝＝えへへへっへへｈ従来の方式では、全てのLEDバンドを大きな電波で制御していた為、壁などの反響による誤作動や、アンテナの設置に問題がありました。';
+    var text = 'どこでもドア岩本はすごくたのしいんだ。すごいよ＝＝＝＝＝＝えへへへっへへｈ従来の方式では、全ての';
     var textMeasure = ctx.measureText(text);
 
     ctx.font = '45px "Rounded Mgen+ 1c"';
