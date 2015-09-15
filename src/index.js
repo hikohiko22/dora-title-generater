@@ -16,7 +16,6 @@ app.get('/:txt', function(request, response) {
 	fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
 	    if (err) throw err;
 
-	    // データをcanvasのcontextに設定
 	    var img = new Image;
 	    img.src = data;
 	    var canvas = new Canvas(img.width, img.height);
@@ -49,7 +48,11 @@ app.get('/:txt', function(request, response) {
 	    	tmpText = '';
 	    }
 
-	    response.send('<img src="' + canvas.toDataURL() + '" />');
+	    var base64 = canvas.toDataURL('image/jpeg');
+
+	    response.set('Content-Type', 'image/jpeg');
+	    response.send(base64);
+	    //response.send('<img src="' + canvas.toDataURL() + '" />');
 	});
 });
 
