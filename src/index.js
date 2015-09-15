@@ -48,9 +48,9 @@ app.get('/:txt', function(request, response) {
 	    	ctx.fillText(tmpText, canvas.width / 2, textPosY);
 	    	tmpText = '';
 	    }
-	});
 
-    response.send('<img src="' + canvas.toDataURL() + '" />');
+	    response.send('<img src="' + canvas.toDataURL() + '" />');
+	});
 });
 
 app.listen(app.get('port'), function() {
