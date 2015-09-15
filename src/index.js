@@ -16,22 +16,32 @@ fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
     var ctx = canvas.getContext('2d');
     ctx.drawImage(img, 0, 0, img.width, img.height);
 
-    var text = 'どこでもドア岩本';
+    var text = 'どこでもドア岩本はすごくたのしいんだ。すごいよ＝＝＝＝＝＝えへへへっへへｈ従来の方式では、全てのLEDバンドを大きな電波で制御していた為、壁などの反響による誤作動や、アンテナの設置に問題がありました。';
     var textMeasure = ctx.measureText(text);
-
-    console.log(textMeasure.width, textMeasure.height);
 
     ctx.font = '45px "Rounded Mgen+ 1c"';
     ctx.textAlign = 'center';
-
 	ctx.fillStyle = 'rgba(255, 255, 255, 1.0)';
-	ctx.fillText(text, canvas.width / 2, 105);
 
-	text = 'hogehohgoe';
+    var tmpText = '';
+    var textPosY = 105;
 
-	ctx.fillText(text, canvas.width / 2, 105 + 50);
+    for (var i = 0, len = text.length; i < len; i++) {
+    	tmpText += text[i];
+    	textMeasure = ctx.measureText(tmpText);
 
-	console.log(textMeasure.width, textMeasure.height);
+    	if (textMeasure.width >= 100) {
+    		ctx.fillText(tmpText, canvas.width / 2, textPosY);
+
+    		tmpText = '';
+    		textPosY += 50;
+    	}
+    }
+
+    if (tmpText.length !== 0) {
+    	ctx.fillText(tmpText, canvas.width / 2, textPosY);
+    	tmpText = '';
+    }
 
     app.set('port', (process.env.PORT || 5000));
 	app.use(express.static(__dirname + '/public'));
