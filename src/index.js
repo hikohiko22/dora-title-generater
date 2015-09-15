@@ -10,7 +10,14 @@ var app = express();
 fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
     if (err) throw err;
 
-    // データをcanvasのcontextに設定
+    app.set('port', (process.env.PORT || 5000));
+	app.use(express.static(__dirname + '/public'));
+
+	app.get('/:txt', function(request, response) {
+		console.log('request.params.txt');
+	    console.log(request.params.txt);
+
+	    // データをcanvasのcontextに設定
     var img = new Image;
     img.src = data;
     var canvas = new Canvas(img.width, img.height);
@@ -43,13 +50,6 @@ fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
     	ctx.fillText(tmpText, canvas.width / 2, textPosY);
     	tmpText = '';
     }
-
-    app.set('port', (process.env.PORT || 5000));
-	app.use(express.static(__dirname + '/public'));
-
-	app.get('/:txt', function(request, response) {
-		console.log('request.params.txt');
-	    console.log(request.params.txt);
 	});
 
 	app.listen(app.get('port'), function() {
