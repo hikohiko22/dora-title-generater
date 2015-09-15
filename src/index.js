@@ -1,7 +1,6 @@
 var Canvas = require('canvas');
 var express = require('express');
 var fs = require('fs');
-var req = require('request');
 
 var Font = Canvas.Font;
 var Image = Canvas.Image;
@@ -48,14 +47,9 @@ fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
     app.set('port', (process.env.PORT || 5000));
 	app.use(express.static(__dirname + '/public'));
 
-	app.get('/', function(request, response) {
-	    req.get(url, function(error, response, body){
-        if (!error && response.statusCode == 200) {
-        	console.log('body');
-            console.log(body);
-        } else {
-            console.log('error: '+ response.statusCode);
-        }
+	app.get('/:txt', function(request, response) {
+		console.log('request.params.txt');
+	    console.log(request.params.txt);
 	});
 
 	app.listen(app.get('port'), function() {

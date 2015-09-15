@@ -21,7 +21,6 @@
   "homepage": "https://github.com/pepoipod/dora-title-generater",
   "dependencies": {
     "canvas": "^1.2.8",
-    "express": "^4.13.3",
-    "request": "^2.61.0"
+    "express": "^4.13.3"
   }
 }
