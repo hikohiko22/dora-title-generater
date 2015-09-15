@@ -30,7 +30,7 @@ fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
     	tmpText += text[i];
     	textMeasure = ctx.measureText(tmpText);
 
-    	if (textMeasure.width >= 360) {
+    	if (textMeasure.width >= 370) {
     		ctx.fillText(tmpText, canvas.width / 2, textPosY);
 
     		tmpText = '';
