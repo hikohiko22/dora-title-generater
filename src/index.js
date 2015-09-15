@@ -49,10 +49,7 @@ app.get('/:txt', function(request, response) {
 	    }
 
 	    var base64 = canvas.toDataURL('image/png');
-
-	    //response.set('Content-Type', 'image/png');
 	    response.send(base64, {'Content-Type': 'image/png'}, 200);
-	    //response.send('<img src="' + canvas.toDataURL() + '" />');
 	});
 });
 
