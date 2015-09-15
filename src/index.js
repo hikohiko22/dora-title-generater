@@ -11,6 +11,8 @@ app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 
 app.get('/:txt', function(request, response) {
+	var text = request.params.txt;
+
 	fs.readFile(__dirname + '/images/bg.jpg', function(err, data){
 	    if (err) throw err;
 
@@ -21,7 +23,6 @@ app.get('/:txt', function(request, response) {
 	    var ctx = canvas.getContext('2d');
 	    ctx.drawImage(img, 0, 0, img.width, img.height);
 
-	    var text = request.params.txt;
 	    var textMeasure;
 
 	    ctx.font = '45px "Rounded Mgen+ 1c"';
