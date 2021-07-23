@@ -7,6 +7,8 @@ var Image = Canvas.Image;
 
 var app = express();
 
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs'); // set up ejs for templating
 app.set('port', (process.env.PORT || 5500));
 app.use(express.static(__dirname + '/public'));
 
